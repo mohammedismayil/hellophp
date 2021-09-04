@@ -1,0 +1,61 @@
+.button-center{
+text-align: center;
+background-color: #fcd6d7;
+color: black;
+}
+h1{
+    color: brown;
+}
+.container{
+    display: flex;
+    background-color: #fcd6d7 ;
+    border-radius: 50px;
+    height: 25px;
+   
+    margin-right: 100px;
+    margin-left: 100px;
+    padding: 50px;
+    overflow: hidden;
+}
+.containerimg{
+    /* max-width: 200%;
+    width: 150px; */
+    width: 100%;
+    height: auto;
+    align-content: center;
+    /* padding: 50px; */
+    /* vertical-align: middle; */
+}
+.containerimgdiv{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    /* position: relative; */
+    /* bottom: 0;
+    right: 0; */
+}
+
+.containertitle{
+    font-family: Product Sans;
+    font-size: 40px;
+}
+.containersubtitle{
+    font-family: Product Sans;
+    font-size: 25px;
+    padding-top: 0px;
+    margin-top: 0px;
+}
+.containerdiv{
+    align-content: center;
+}
+
+@font-face {
+    font-family: 'Product Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Open Sans'), local('OpenSans'), url(https://fonts.gstatic.com/s/productsans/v5/HYvgU2fE2nRJvZ5JFAumwegdm0LZdjqr5-oayXSOefg.woff2) format('woff2');
+  }
+.flex{
+display: flex;
+flex-wrap: wrap;
+  }
