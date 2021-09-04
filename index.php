@@ -1,3 +1,34 @@
+<?php
+
+
+// Include config file
+// require_once "config.php";
+session_start();
+
+// initializing variables
+$username = "";
+$email    = "";
+
+
+// connect to the database
+$db = mysqli_connect('localhost', 'root', 'ismayilmi', 'hellophp');
+$username = mysqli_real_escape_string($db, $_POST['username']);
+$password = mysqli_real_escape_string($db, $_POST['password']);
+
+
+echo var_dump($_POST);
+// echo var_dump($username);
+// echo var_dump($password);
+$query = "INSERT INTO users (username,password) 
+  			  VALUES('$username', '$password')";
+mysqli_query($db, $query);
+$_SESSION['username'] = $username;
+$_SESSION['success'] = "You are now logged in";
+// header('location: add.php');
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,27 +41,16 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="containerdiv flex">
+    <form action="index.php" method="POST">
+        <input type="text" name="username" key="username">
 
-            <h2 class="containertitle">Food Delivery</h2>
-            <h3 class="containersubtitle">When It Comes To Delivery, The First And Foremost Preferred Delivery Service Of The Customer Is Food. Facilitate Food Delivery Services From The Nearby</h3>
-            <!-- <h2 class="containertitle">Food Delivery</h2> -->
+        <input type="password" name="password" key="username">
 
-
-        </div>
-        <div class="containerimgdiv flex">
-            <img src="./Images/biryani.jpeg" class="containerimg">
-
-        </div>
+        <button type="submit">submit here</button>
 
 
+    </form>
 
-
-
-
-
-    </div>
 </body>
 
 </html>

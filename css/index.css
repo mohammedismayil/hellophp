@@ -10,8 +10,8 @@ h1{
     display: flex;
     background-color: #fcd6d7 ;
     border-radius: 50px;
-    height: 25px;
-   
+    height: 250px;
+    margin-top: 25px;
     margin-right: 100px;
     margin-left: 100px;
     padding: 50px;
