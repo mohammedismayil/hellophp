@@ -19,9 +19,15 @@ $password = mysqli_real_escape_string($db, $_POST['password']);
 echo var_dump($_POST);
 // echo var_dump($username);
 // echo var_dump($password);
-$query = "INSERT INTO users (username,password) 
-  			  VALUES('$username', '$password')";
-mysqli_query($db, $query);
+
+
+// $query = "INSERT INTO users (username,password) 
+//   			  VALUES('$username', '$password')";
+// mysqli_query($db, $query);
+$query =  "SELECT * FROM `users`";
+$myquery = mysqli_query($db, $query);
+echo json_encode($myquery);
+// echo var_dump($myquery);
 $_SESSION['username'] = $username;
 $_SESSION['success'] = "You are now logged in";
 // header('location: add.php');
