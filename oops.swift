@@ -58,3 +58,5 @@ class drawer{
 var draw = drawer()
 var mytrio = triangle()
 draw.giveTheFeeForShape(shape: mytrio)
+var mysquare = rectangle()
+draw.giveTheFeeForShape(shape:mysquare)

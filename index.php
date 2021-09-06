@@ -16,21 +16,37 @@ $username = mysqli_real_escape_string($db, $_POST['username']);
 $password = mysqli_real_escape_string($db, $_POST['password']);
 
 
-echo var_dump($_POST);
+// echo var_dump($_POST['username']);
 // echo var_dump($username);
 // echo var_dump($password);
 
+$queryname = "jack";
+echo var_dump($queryname);
+$myqueryy = "SELECT username FROM `users` WHERE `username` = $queryname ";
+$usernamefromdb = mysqli_query($db, $myqueryy);
 
-// $query = "INSERT INTO users (username,password) 
+echo var_dump($usernamefromdb);
+// echo var_dump(mysqli_num_rows($usernamefromdb));
+// if(mysqli_num_rows($usernamefromdb)) {
+
+
+//     $query = "INSERT INTO users (username,password) 
 //   			  VALUES('$username', '$password')";
 // mysqli_query($db, $query);
-$query =  "SELECT * FROM `users`";
-$myquery = mysqli_query($db, $query);
-echo json_encode($myquery);
+// $query =  "SELECT 'username' FROM `users`";
+// $myquery = mysqli_query($db, $query);
+// // echo json_encode($myquery);
 // echo var_dump($myquery);
-$_SESSION['username'] = $username;
-$_SESSION['success'] = "You are now logged in";
-// header('location: add.php');
+// }else {
+//     $_SESSION['username'] = $username;
+//     $_SESSION['success'] = "You are now logged in";
+//     header('location: add.php');
+
+// }
+
+
+
+
 
 
 
