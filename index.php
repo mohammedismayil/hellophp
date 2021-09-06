@@ -22,7 +22,8 @@ $password = mysqli_real_escape_string($db, $_POST['password']);
 
 $queryname = "jack";
 echo var_dump($queryname);
-$myqueryy = "SELECT username FROM `users` WHERE `username` = $queryname ";
+// $myqueryy = "SELECT username FROM `users` WHERE `username` = $queryname ";
+$myqueryy = "SELECT username FROM `users` WHERE username = `jack`";
 $usernamefromdb = mysqli_query($db, $myqueryy);
 
 echo var_dump($usernamefromdb);
