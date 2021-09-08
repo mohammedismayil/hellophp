@@ -1,56 +1,30 @@
 <?php
 
-
-// Include config file
-// require_once "config.php";
 session_start();
 
-// initializing variables
 $username = "";
 $email    = "";
 
-
-// connect to the database
 $db = mysqli_connect('localhost', 'root', 'ismayilmi', 'hellophp');
 $username = mysqli_real_escape_string($db, $_POST['username']);
 $password = mysqli_real_escape_string($db, $_POST['password']);
 
-
-// echo var_dump($_POST['username']);
-// echo var_dump($username);
-// echo var_dump($password);
-
-$queryname = "jack";
-echo var_dump($queryname);
-// $myqueryy = "SELECT username FROM `users` WHERE `username` = $queryname ";
-$myqueryy = "SELECT username FROM `users` WHERE username = `jack`";
+$queryname = $_POST['username'];
+$myqueryy = "SELECT * FROM users WHERE (username = '$queryname' And password = '$querypassword')";
 $usernamefromdb = mysqli_query($db, $myqueryy);
 
-echo var_dump($usernamefromdb);
-// echo var_dump(mysqli_num_rows($usernamefromdb));
-// if(mysqli_num_rows($usernamefromdb)) {
+if (mysqli_num_rows($usernamefromdb)) {
 
+    // $_SESSION['username'] = $username;
+    $_SESSION['success'] = "You are now logged in";
+    echo var_dump($myquery);
+    header('location: add.php');
+} else {
 
-//     $query = "INSERT INTO users (username,password) 
-//   			  VALUES('$username', '$password')";
-// mysqli_query($db, $query);
-// $query =  "SELECT 'username' FROM `users`";
-// $myquery = mysqli_query($db, $query);
-// // echo json_encode($myquery);
-// echo var_dump($myquery);
-// }else {
-//     $_SESSION['username'] = $username;
-//     $_SESSION['success'] = "You are now logged in";
-//     header('location: add.php');
-
-// }
-
-
-
-
-
-
-
+    $query = "INSERT INTO users (username,password) 
+  			  VALUES('$username', '$password')";
+    mysqli_query($db, $query);
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
