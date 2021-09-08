@@ -90,10 +90,8 @@ class Car
 $mycar = new Car(40, 50, 546);
 
 
-// so only we can access the methods in the object not a variable
 
 $mycar->changePrice(150);
 echo $mycar->returnModelAndPrice();
-// echo $mycar->model;
-// Car($mileage: 40,$price: 15000,$model: 1997));
+
 ?>
