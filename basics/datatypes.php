@@ -76,9 +76,15 @@ class Car
     {
         print("initialize from initialize");
     }
+
+    public function returnPrice()
+    {
+        return $this->price;
+    }
 }
 $mycar = new Car(40, 50, 546);
 // $mycar->initializeTheObject();
-echo $mycar->price;
+echo $mycar->returnPrice();
+// echo $mycar->model;
 // Car($mileage: 40,$price: 15000,$model: 1997));
 ?>
