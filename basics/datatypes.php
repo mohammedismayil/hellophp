@@ -55,11 +55,11 @@ print("below the html");
 class Car
 {
 
-    private $price;
+    public $price;
 
-    private $model;
+    public $model;
 
-    private $mileage;
+    public $mileage;
 
 
 
@@ -77,14 +77,18 @@ class Car
         print("initialize from initialize");
     }
 
-    public function returnPrice()
+    public function returnModelAndPrice()
     {
-        return $this->price;
+        return "This car's price is $this->price and model is $this->model";
     }
 }
 $mycar = new Car(40, 50, 546);
-// $mycar->initializeTheObject();
-echo $mycar->returnPrice();
+
+
+// so only we can access the methods in the object not a variable
+
+$mycar->price = 9090;
+echo $mycar->returnModelAndPrice();
 // echo $mycar->model;
 // Car($mileage: 40,$price: 15000,$model: 1997));
 ?>
