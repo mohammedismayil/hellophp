@@ -55,7 +55,7 @@ print("below the html");
 class Car
 {
 
-    public $price;
+    private $price;
 
     public $model;
 
@@ -81,13 +81,18 @@ class Car
     {
         return "This car's price is $this->price and model is $this->model";
     }
+
+    public function changePrice($pricefrom)
+    {
+        return $this->price = $pricefrom;
+    }
 }
 $mycar = new Car(40, 50, 546);
 
 
 // so only we can access the methods in the object not a variable
 
-$mycar->price = 9090;
+$mycar->changePrice(150);
 echo $mycar->returnModelAndPrice();
 // echo $mycar->model;
 // Car($mileage: 40,$price: 15000,$model: 1997));
