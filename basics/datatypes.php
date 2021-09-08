@@ -2,14 +2,32 @@
 
 $iamstring = 'iamstring';
 $iaminteger = 908409587987797900888;
-var_dump($iamstring);
-var_dump($iaminteger);
+$iamboolean = true;
+
+$iamarray = array("bmw", "audi", "benz");
 
 function insertData()
 {
     print("hello function");
+    getData();
 }
+
+
+function getData()
+{
+    print("ok i am getting the data you can chill");
+}
+
 insertData();
+
+
+// function dumpData()
+// {
+//     var_dump($iamstring);
+//     var_dump($iaminteger);
+//     var_dump($iamboolean);
+// }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,3 +49,36 @@ insertData();
 </body>
 
 </html>
+<?php
+print("below the html");
+
+class Car
+{
+
+    private $price;
+
+    private $model;
+
+    private $mileage;
+
+
+
+    public function __construct($price, $model, $mileage)
+    {
+
+        print("i am initializing the function");
+        $this->price = $price;
+        $this->model = $model;
+        $this->mileage = $mileage;
+    }
+
+    public function initializeTheObject()
+    {
+        print("initialize from initialize");
+    }
+}
+$mycar = new Car(40, 50, 546);
+// $mycar->initializeTheObject();
+echo $mycar->price;
+// Car($mileage: 40,$price: 15000,$model: 1997));
+?>
