@@ -13,12 +13,15 @@ $queryname = $_POST['username'];
 $myqueryy = "SELECT * FROM users WHERE (username = '$queryname' And password = '$querypassword')";
 $usernamefromdb = mysqli_query($db, $myqueryy);
 
+echo "phpisfun";
+print "this is print function phpisfun";
+echo "<h2>PHP is Fun!</h2>";
 if (mysqli_num_rows($usernamefromdb)) {
 
     // $_SESSION['username'] = $username;
     $_SESSION['success'] = "You are now logged in";
     echo var_dump($myquery);
-    header('location: add.php');
+    // header('location: add.php');
 } else {
 
     $query = "INSERT INTO users (username,password) 
