@@ -51,9 +51,11 @@ insertData();
 </html>
 <?php
 print("below the html");
-
+define("databaseName", "hellophp");
 class Car
 {
+
+
 
     private $price;
 
@@ -79,12 +81,14 @@ class Car
 
     public function returnModelAndPrice()
     {
+
+        print(databaseName);
         return "This car's price is $this->price and model is $this->model";
     }
 
     public function changePrice($pricefrom)
     {
-        return $this->price = $pricefrom;
+        return $this->price = $pricefrom + 30;
     }
 }
 $mycar = new Car(40, 50, 546);
@@ -92,6 +96,10 @@ $mycar = new Car(40, 50, 546);
 
 
 $mycar->changePrice(150);
+$mycar->model = "toyoto";
+
+echo $mycar->model;
+
 echo $mycar->returnModelAndPrice();
 
 ?>
